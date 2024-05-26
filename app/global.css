@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background-color: #020fc7;
+  color: #fefefe;
+}
+
+html {
+  font-family: var(--font-geist-mono), system-ui, var(--font-geist-sans);
+  min-width: 360px;
+}
+
+a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
