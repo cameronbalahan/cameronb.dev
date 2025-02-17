@@ -1,16 +1,40 @@
 import { cx } from "../../utils/formatters";
 
 const ICON_SIZE = {
-  s: "h-5 w-5",
-  m: "h-7 w-7",
-  l: "h-8 w-8",
+  xs: "w-4",
+  s: "w-5",
+  m: "w-7",
+  l: "w-8",
 };
 
-const resolveSize = (size?: keyof typeof ICON_SIZE) => ICON_SIZE[size ?? "m"];
+const resolveSize = (size?: keyof typeof ICON_SIZE) => ICON_SIZE[size ?? "s"];
 
 type IconProps = {
   size?: keyof typeof ICON_SIZE;
 };
+
+export function BlueSkyIcon({size}: IconProps) {
+  return (
+    <div className={cx(["inline-flex", resolveSize(size)])}>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 256 256">
+        <g
+          transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+        >
+	      <path
+          d="M 45 90 L 45 90 C 20.147 90 0 69.853 0 45 v 0 C 0 20.147 20.147 0 45 0 h 0 c 24.853 0 45 20.147 45 45 v 0 C 90 69.853 69.853 90 45 90 z"
+          fill="currentColor"
+          transform="matrix(1 0 0 1 0 0)"
+        />
+	      <path
+          d="M 29.977 25.793 C 36.058 30.358 42.599 39.615 45 44.582 c 2.402 -4.967 8.942 -14.224 15.023 -18.789 c 4.388 -3.294 11.497 -5.843 11.497 2.267 c 0 1.62 -0.929 13.607 -1.473 15.553 c -1.893 6.766 -8.792 8.491 -14.929 7.447 c 10.727 1.826 13.456 7.873 7.562 13.92 c -11.192 11.485 -16.087 -2.882 -17.341 -6.563 c -0.23 -0.675 -0.337 -0.991 -0.339 -0.722 c -0.002 -0.268 -0.109 0.047 -0.339 0.722 c -1.254 3.681 -6.148 18.048 -17.341 6.563 c -5.893 -6.047 -3.165 -12.095 7.562 -13.92 c -6.137 1.044 -13.036 -0.681 -14.929 -7.447 c -0.545 -1.946 -1.473 -13.933 -1.473 -15.553 C 18.48 19.95 25.589 22.499 29.977 25.793 L 29.977 25.793 z"
+          opacity="1"
+          transform=" matrix(1 0 0 1 0 0)"
+         />
+        </g>
+      </svg>
+    </div>
+  )
+}
 
 export function LinkedinIcon({ size }: IconProps) {
   return (
@@ -30,12 +54,9 @@ export function LinkedinIcon({ size }: IconProps) {
 export function LocationIcon({ size }: IconProps) {
   return (
     <div className={cx(["inline-flex", resolveSize(size)])}>
-      <svg
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-      >
-        <path d="M336 96a80 80 0 10-96 78.39v283.17a32.09 32.09 0 002.49 12.38l10.07 24a3.92 3.92 0 006.88 0l10.07-24a32.09 32.09 0 002.49-12.38V174.39A80.13 80.13 0 00336 96zm-56 0a24 24 0 1124-24 24 24 0 01-24 24z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <circle fill="currentColor" cx="256" cy="192" r="32"/>
+        <path fill="currentColor" d="M256 32c-88.22 0-160 68.65-160 153 0 40.17 18.31 93.59 54.42 158.78 29 52.34 62.55 99.67 80 123.22a31.75 31.75 0 0051.22 0c17.42-23.55 51-70.88 80-123.22C397.69 278.61 416 225.19 416 185c0-84.35-71.78-153-160-153zm0 224a64 64 0 1164-64 64.07 64.07 0 01-64 64z"/>
       </svg>
     </div>
   );
@@ -45,7 +66,6 @@ export function TwitterIcon({ size }: IconProps) {
   return (
     <div className={cx(["inline-flex", resolveSize(size)])}>
       <svg
-        enable-background="new 0 0 48 48"
         viewBox="0 0 48 48"
         xmlSpace="preserve"
         xmlns="http://www.w3.org/2000/svg"

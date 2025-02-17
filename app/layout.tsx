@@ -5,12 +5,14 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { cx } from "../utils/formatters";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../utils/config";
+import { Nav } from "./components/Nav";
+import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_NAME,
-    template: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   openGraph: {
@@ -54,7 +56,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       />
       <body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+          <Nav />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

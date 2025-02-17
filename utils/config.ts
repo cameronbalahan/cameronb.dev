@@ -6,7 +6,9 @@ export const SITE_URL = `https://${SITE_DOMAIN}`;
 export type RouteName = keyof typeof ROUTES;
 
 export const ROUTES = {
-  home: "/",
+  'cameronb.dev': '/',
+  presentations: '/presentations',
+  // blog: '/blog',
 };
 
 export function getImageURL(title: string, imgMetadata?: string) {
