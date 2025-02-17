@@ -3,7 +3,7 @@ import profile from "../public/images/home/profile.jpg";
 import { LocationIcon } from "./components/Icons";
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <section className="flex gap-6 flex-wrap">

@@ -1,7 +1,6 @@
 import { BlueSkyIcon, LinkedinIcon, TwitterIcon, YouTubeIcon } from "./Icons";
-import { IconLink } from "./Link";
 
-export const SOCIALS = [
+const SOCIALS = [
   {
     href: "https://www.linkedin.com/in/cameronbalahan/",
     icon: <LinkedinIcon />
@@ -28,9 +27,15 @@ export function Footer() {
         <span className="text-xs text-zinc-500">© 2025 cameronb.dev</span>
         <div className="flex gap-3 text-neutral-300 align-bottom dark:text-neutral-300">
           {SOCIALS.map(({ href, icon }) => (
-            <IconLink key={`social-${href}`} href={href}>
+            <a
+              className="flex items-end text-neutral-600 hover:text-neutral-100 transition-all"
+              href={href}
+              key={href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               {icon}
-            </IconLink>
+            </a>
           ))}
         </div>
       </div>

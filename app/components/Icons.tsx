@@ -4,7 +4,6 @@ const ICON_SIZE = {
   xs: "w-4",
   s: "w-5",
   m: "w-7",
-  l: "w-8",
 };
 
 const resolveSize = (size?: keyof typeof ICON_SIZE) => ICON_SIZE[size ?? "s"];
