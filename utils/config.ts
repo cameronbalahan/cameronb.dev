@@ -8,7 +8,6 @@ export type RouteName = keyof typeof ROUTES;
 export const ROUTES = {
   'cameronb.dev': '/',
   presentations: '/presentations',
-  // blog: '/blog',
 };
 
 export function getImageURL(title: string, imgMetadata?: string) {

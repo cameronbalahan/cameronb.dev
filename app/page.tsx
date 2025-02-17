@@ -5,16 +5,18 @@ import { LocationIcon } from "./components/Icons";
 
 export default function Home() {
   return (
-    <div className="space-y-24">
-      <section className="flex gap-6">
-        <Image
-          alt="Cameron Balahan Profile"
-          className="rounded-md"
-          priority
-          src={profile}
-          unoptimized
-          width={250}
-          />
+    <div>
+      <section className="flex gap-6 flex-wrap">
+        <div className="shrink-0" >
+          <Image
+            alt="Cameron Balahan Profile"
+            className="rounded-md"
+            priority
+            src={profile}
+            unoptimized
+            width={250}
+            />
+        </div>
         <div className="flex flex-col gap-4 p-1" >
           <div className="flex flex-col gap-1" >
             <h2 className="font-medium text-xl mb-1">
@@ -30,16 +32,6 @@ export default function Home() {
             Before Google, Cameron led a high frequency market making firm where he built low latency trading systems in C and C++.  He likes Go more.
           </p>
         </div>
-      </section>
-      <section>
-      <h2 className="font-medium">--</h2>
-        <h2 className="font-medium">featured presentations</h2>
-        <div className="" >
-        </div>
-      </section>
-      <section>
-        <h2 className="font-medium">--</h2>
-        <h2 className="font-medium">connect</h2>
       </section>
     </div>
   );

@@ -45,7 +45,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html
       lang="en"
       className={cx([
-        "text-black bg-white dark:text-white dark:bg-[#111010]",
+        "text-white bg-[#111010]",
         GeistMono.variable,
         GeistSans.variable,
       ])}
