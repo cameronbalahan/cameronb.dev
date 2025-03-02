@@ -7,7 +7,7 @@ export default function NotFound() {
       <h2>404 | Not Found</h2>
       <Link
         className="flex items-center gap-1 underline mt-10"
-        href={ROUTES.home}
+        href={ROUTES['cameronb.dev']}
       >
         Return home
       </Link>
