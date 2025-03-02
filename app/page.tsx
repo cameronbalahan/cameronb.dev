@@ -9,7 +9,7 @@ export default function HomePage() {
       <div>
         <Image
           alt="Cameron Balahan Profile"
-          className="rounded-md float-left mr-6 mb-1"
+          className="rounded-md sm:float-left float-none mr-6 mb-1"
           priority
           src={profile}
           unoptimized
@@ -19,7 +19,7 @@ export default function HomePage() {
           <h2 className="font-medium text-4xl">
             Cameron Balahan
           </h2>
-          <div className="flex gap-1 font-medium  text-neutral-400">
+          <div className="flex gap-1 font-medium text-neutral-400">
             <LocationIcon />
             <span className="-mb-1" >New York City</span>
           </div>

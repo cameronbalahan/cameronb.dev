@@ -16,6 +16,7 @@ export default async function PresentationsPage() {
         <Link
           className="flex items-center gap-1 underline mt-10"
           href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`}
+          rel="noopener noreferrer"
           target="_blank"
         >
           View on YouTube
