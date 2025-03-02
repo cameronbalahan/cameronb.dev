@@ -1,43 +1,35 @@
 import Image from "next/image";
 import profile from "../public/images/home/profile.jpg";
-import { IconLink } from "./components/Link";
-import {
-  LinkedinIcon,
-  LocationIcon,
-  TwitterIcon,
-  YouTubeIcon,
-} from "./components/Icons";
+import { LocationIcon } from "./components/Icons";
 
-export default function Home() {
+
+export default function HomePage() {
   return (
-    <div>
-      <Image
-        alt="Cameron Balahan Profile"
-        className="rounded-lg border-2 mb-4"
-        priority
-        height={300}
-        width={300}
-        src={profile}
-        unoptimized
-      />
-      <h1 className="font-medium text-2xl tracking-tighter mb-1">
-        Cameron Balahan
-      </h1>
-      <div className="flex align-bottom gap-0.5 mb-3.5 -ml-1 text-neutral-200">
-        <LocationIcon size="s" />
-        <div>New York City</div>
-      </div>
-      <div className="flex gap-3 text-neutral-600 align-bottom dark:text-neutral-300">
-        <IconLink href="https://www.linkedin.com/in/cameronbalahan/">
-          <LinkedinIcon />
-        </IconLink>
-        <IconLink href="https://x.com/cameronbalahan">
-          <TwitterIcon />
-        </IconLink>
-        <IconLink href="https://www.youtube.com/playlist?list=PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh">
-          <YouTubeIcon />
-        </IconLink>
-      </div>
-    </div>
+    <section className="flex gap-6 flex-wrap">
+      <p>
+        <Image
+          alt="Cameron Balahan Profile"
+          className="rounded-md float-left mr-6 mb-1"
+          priority
+          src={profile}
+          unoptimized
+          width={250}
+        />
+        <div className="flex flex-col gap-3 mb-10">
+          <h2 className="font-medium text-4xl">
+            Cameron Balahan
+          </h2>
+          <div className="flex gap-1 font-medium  text-neutral-400">
+            <LocationIcon />
+            <span className="-mb-1" >New York City</span>
+          </div>
+        </div>
+        <span className="text-sm text-neutral-300">
+          <p>I'm a product leader and entrepreneur with a passion for creating excellent developer experiences. Currently, I lead a portfolio of developer products at Google that includes the Go programming language — one of the most-loved and fastest growing developer products in the industry — as well as a new suite of AI agents for the software development life cycle. I also frequently present keynotes and technical talks at industry conferences, including at Google I/O, Google Cloud Next, and at GopherCons around the world.</p>
+          <p className="mt-3">Before joining Google, I founded and grew a quantitative proprietary trading firm, leading it from its initial stages to a successful acquisition. And, before that, I practiced law at Katten Muchin Rosenman LLP.</p>
+          <p className="mt-3">I grew up in Southern California, but I’ve lived in New York City for almost twenty years — and I don’t think I’ll ever leave.</p>
+        </span>
+      </p>
+    </section>
   );
 }
