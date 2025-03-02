@@ -24,7 +24,7 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
-        <span className="text-xs text-zinc-500">© 2025 cameronb.dev</span>
+        <span className="text-xs text-zinc-500">© {new Date().getFullYear()} cameronb.dev</span>
         <div className="flex gap-3 text-neutral-300 align-bottom dark:text-neutral-300">
           {SOCIALS.map(({ href, icon }) => (
             <a

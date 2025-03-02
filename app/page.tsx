@@ -5,34 +5,31 @@ import { LocationIcon } from "./components/Icons";
 
 export default function HomePage() {
   return (
-    <div>
-      <section className="flex gap-6 flex-wrap">
-        <div className="shrink-0" >
-          <Image
-            alt="Cameron Balahan Profile"
-            className="rounded-md"
-            priority
-            src={profile}
-            unoptimized
-            width={250}
-            />
-        </div>
-        <div className="flex flex-col gap-4 p-1" >
-          <div className="flex flex-col gap-1" >
-            <h2 className="font-medium text-xl mb-1">
-              Cameron Balahan
-            </h2>
-            <div className="flex gap-1 text-sm text-neutral-400">
-              <LocationIcon size="xs" />
-              <span>New York City</span>
-            </div>
+    <section className="flex gap-6 flex-wrap">
+      <p>
+        <Image
+          alt="Cameron Balahan Profile"
+          className="rounded-md float-left mr-6 mb-1"
+          priority
+          src={profile}
+          unoptimized
+          width={250}
+        />
+        <div className="flex flex-col gap-3 mb-10">
+          <h2 className="font-medium text-4xl">
+            Cameron Balahan
+          </h2>
+          <div className="flex gap-1 font-medium  text-neutral-400">
+            <LocationIcon />
+            <span className="-mb-1" >New York City</span>
           </div>
-          <p className="text-sm text-neutral-400">
-            Cameron is the product lead for the Go programming language at Google and a contributor to Google Cloud's agent ecosystem and AI developer assistance strategy.
-            Before Google, Cameron led a high frequency market making firm where he built low latency trading systems in C and C++.  He likes Go more.
-          </p>
         </div>
-      </section>
-    </div>
+        <span className="text-sm text-neutral-300">
+          <p>I'm a product leader and entrepreneur with a passion for creating excellent developer experiences. Currently, I lead a portfolio of developer products at Google that includes the Go programming language — one of the most-loved and fastest growing developer products in the industry — as well as a new suite of AI agents for the software development life cycle. I also frequently present keynotes and technical talks at industry conferences, including at Google I/O, Google Cloud Next, and at GopherCons around the world.</p>
+          <p className="mt-3">Before joining Google, I founded and grew a quantitative proprietary trading firm, leading it from its initial stages to a successful acquisition. And, before that, I practiced law at Katten Muchin Rosenman LLP.</p>
+          <p className="mt-3">I grew up in Southern California, but I’ve lived in New York City for almost twenty years — and I don’t think I’ll ever leave.</p>
+        </span>
+      </p>
+    </section>
   );
 }

@@ -1,9 +1,6 @@
 import "./global.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { cx } from "../utils/formatters";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../utils/config";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
@@ -44,12 +41,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html
       lang="en"
-      className={cx([
-        "text-white bg-[#111010]",
-        GeistMono.variable,
-        GeistSans.variable,
-      ])}
+      className="text-white bg-[#111010]"
     >
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+      </style>
       <link
         rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>"
