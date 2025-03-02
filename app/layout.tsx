@@ -1,9 +1,11 @@
 import "./global.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
+import { Roboto_Mono } from 'next/font/google'
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../utils/config";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
+import { cx } from "../utils/formatters";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -37,15 +39,17 @@ export const metadata: Metadata = {
   },
 };
 
+const roboto = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html
       lang="en"
-      className="text-white bg-[#111010]"
+      className={cx([roboto.className, "text-white bg-[#111010]"])}
     >
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-      </style>
       <link
         rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>"
