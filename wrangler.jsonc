@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "main": "./app/page.ts",
+  "pages_build_output_dir": "./next",
   "secrets_store_secrets": [
     {
       "binding": "YOUTUBE_API_KEY",
