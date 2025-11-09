@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "main": "./app/page.ts",
+  "secrets_store_secrets": [
+    {
+      "binding": "YOUTUBE_API_KEY",
+      "store_id": "17ba94f7895e48e8aded610dd1828ac1",
+      "secret_name": "YOUTUBE_API_KEY"
+    }
+  ]
+}

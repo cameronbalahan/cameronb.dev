@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { ExternalIcon } from "../components/Icons";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-import {YOUTUBE_API_KEY } from '$env/static/private'
 
 const YOUTUBE_PLAYLIST_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 const PLAYLIST_ID = 'PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh';
 
 
 export default async function PresentationsPage() {
-  const res = await fetch(`${YOUTUBE_PLAYLIST_API}?key=${YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=50`)
+  // const context = getCloudflareContext().env.YOUTUBE_API_KEY;
+
+
+  const res = await fetch(`${YOUTUBE_PLAYLIST_API}?key=${process.env.YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=50`)
   const data = await res.json();
+
 
   if (data?.error) {
     return (
