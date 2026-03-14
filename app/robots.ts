@@ -1,5 +1,7 @@
 import { SITE_URL } from "../utils/config";
 
+export const dynamic = "force-static";
+
 export default function robots() {
   return {
     rules: {
