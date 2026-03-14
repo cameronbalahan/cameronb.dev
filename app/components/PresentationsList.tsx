@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const PAGE_SIZE = 5;
@@ -27,11 +28,9 @@ export default function PresentationsList({ items }: { items: Item[] }) {
           const medium = snippet?.thumbnails?.medium;
           return (
             <li key={id}>
-              <a
+              <Link
                 className="grid grid-cols-2 gap-4 rounded-md p-6 hover:bg-neutral-900"
-                href={`https://www.youtube.com/watch?v=${snippet?.resourceId?.videoId}`}
-                rel="noopener noreferrer"
-                target="_blank"
+                href={`/presentations/${snippet?.resourceId?.videoId}`}
               >
                 <img
                   className="rounded-md"
@@ -46,7 +45,7 @@ export default function PresentationsList({ items }: { items: Item[] }) {
                   </span>
                   <h3 className="font-medium">{snippet?.title}</h3>
                 </div>
-              </a>
+              </Link>
             </li>
           );
         })}
