@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { ExternalIcon } from "../components/Icons";
 import PresentationsList from "../components/PresentationsList";
-
-const YOUTUBE_PLAYLIST_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
-const PLAYLIST_ID = 'PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh';
+import { getPlaylistItems, PLAYLIST_ID } from "../../utils/youtube";
 
 export default async function PresentationsPage() {
-  const res = await fetch(`${YOUTUBE_PLAYLIST_API}?key=${process.env.YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=50`)
-  const data = await res.json();
+  const items = await getPlaylistItems();
 
-  if (data?.error) {
+  if (!items.length) {
     return (
       <div>
         <h2>500 | Presentations unavailable</h2>
@@ -23,12 +20,12 @@ export default async function PresentationsPage() {
           <ExternalIcon />
         </Link>
       </div>
-    )
+    );
   }
 
   return (
     <div>
-      <PresentationsList items={data?.items ?? []} />
+      <PresentationsList items={items} />
     </div>
   );
 }
