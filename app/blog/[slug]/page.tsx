@@ -33,7 +33,7 @@ export default async function PostPage({
 
   if (!post) notFound();
 
-  const html = marked(post.content);
+  const html = await marked(post.content);
   const date = new Date(post.date + "T12:00:00").toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
