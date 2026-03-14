@@ -1,10 +1,10 @@
 import { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
-export const nextConfig: NextConfig = {
-  output: "export",
+initOpenNextCloudflareForDev();
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-initOpenNextCloudflareForDev();
+export default nextConfig;
