@@ -7,6 +7,7 @@ export type RouteName = keyof typeof ROUTES;
 
 export const ROUTES = {
   'cameronb.dev': '/',
+  blog: '/blog',
   presentations: '/presentations',
 };
 
