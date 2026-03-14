@@ -11,6 +11,3 @@
 
 # typescript
 next-env.d.ts
-
-# wrangler
-.wrangler
