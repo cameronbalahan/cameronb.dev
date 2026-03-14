@@ -3,8 +3,13 @@ import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { getAllPosts, getPost } from "../../../utils/blog";
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  // __placeholder__ will render 404 page if no posts
+  if (posts.length === 0) return [{ slug: "__placeholder__" }];
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
