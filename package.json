@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "preview": "npx serve out",
-    "newpost": "node -e \"const d=new Date().toISOString().split('T')[0];const f='content/blog/'+d+'.md';if(require('fs').existsSync(f)){console.warn('Warning: '+f+' already exists, skipping.');process.exit(1);}require('fs').writeFileSync(f,'---\\ntitle: Untitled\\ndate: '+d+'\\npublished: false\\n---\\n');console.log('Created',f);\""
+    "new:post": "node -e \"const d=new Date().toISOString().split('T')[0];const f='content/blog/'+d+'.md';if(require('fs').existsSync(f)){console.warn('Warning: '+f+' already exists, skipping.');process.exit(1);}require('fs').writeFileSync(f,'---\\ntitle: Untitled\\ndate: '+d+'\\npublished: false\\n---\\n');console.log('Created',f);\""
   },
   "keywords": [],
   "author": "",
