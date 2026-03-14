@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "opennextjs-cloudflare build",
+    "build": "next build",
     "start": "serve out"
   },
   "keywords": [],
