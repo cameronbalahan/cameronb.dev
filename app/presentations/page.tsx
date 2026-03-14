@@ -4,7 +4,6 @@ import { ExternalIcon } from "../components/Icons";
 const YOUTUBE_PLAYLIST_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 const PLAYLIST_ID = 'PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh';
 
-
 export default async function PresentationsPage() {
   const res = await fetch(`${YOUTUBE_PLAYLIST_API}?key=${process.env.YOUTUBE_API_KEY}&playlistId=${PLAYLIST_ID}&part=snippet&maxResults=50`)
   const data = await res.json();
