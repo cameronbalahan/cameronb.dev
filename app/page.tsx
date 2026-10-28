@@ -1,6 +1,11 @@
 import Image from "next/image";
 import profile from "../public/images/home/profile.webp";
+import { Metadata } from "next";
 import { LocationIcon } from "./components/Icons";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 
 export default function HomePage() {
@@ -16,9 +21,9 @@ export default function HomePage() {
           width={250}
         />
         <div className="flex flex-col gap-3 mb-10">
-          <h2 className="font-medium text-4xl">
+          <h1 className="font-medium text-4xl">
             Cameron Balahan
-          </h2>
+          </h1>
           <div className="flex gap-1 font-medium text-neutral-400">
             <LocationIcon />
             <span className="-mb-1" >New York City</span>

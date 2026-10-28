@@ -1,7 +1,13 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { ExternalIcon } from "../components/Icons";
 import PresentationsList from "../components/PresentationsList";
 import { getPlaylistItems, PLAYLIST_ID } from "../../utils/youtube";
+
+export const metadata: Metadata = {
+  title: "Presentations",
+  alternates: { canonical: "/presentations" },
+};
 
 export default async function PresentationsPage() {
   const items = await getPlaylistItems();
