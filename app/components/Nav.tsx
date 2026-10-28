@@ -6,8 +6,8 @@ import { Fragment } from "react";
 export const Nav = () => {
   const routes = Object.entries(ROUTES);
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+    <header className="shrink-0 -ml-[8px] pt-14 pb-12 tracking-tight">
+      <div>
         <nav className="flex flex-row align-bottom items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative">
           <div className="flex flex-row align-bottom space-x-0 pr-10">
             {routes.map(([routeName, route], i) => (
@@ -24,6 +24,6 @@ export const Nav = () => {
           </div>
         </nav>
       </div>
-    </aside>
+    </header>
   );
 }
