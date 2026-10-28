@@ -23,15 +23,12 @@ export async function generateMetadata({
   const item = items.find((i) => i.snippet.resourceId.videoId === videoId);
   if (!item) return {};
 
-  const { title } = item.snippet;
+  const { title, thumbnails } = item.snippet;
   const description = summarize(item.snippet.description) || SITE_DESCRIPTION;
   const path = `/presentations/${videoId}`;
-  const image = {
-    alt: title,
-    height: 360,
-    width: 480,
-    url: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-  };
+  const thumbnail =
+    thumbnails.maxres ?? thumbnails.standard ?? thumbnails.high ?? thumbnails.medium;
+  const image = { alt: title, ...thumbnail };
 
   return {
     title,

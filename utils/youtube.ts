@@ -7,8 +7,15 @@ export type Snippet = {
   description: string;
   publishedAt: string;
   resourceId: { videoId: string };
-  thumbnails: { medium: { url: string; width: number; height: number } };
+  thumbnails: {
+    medium: Thumbnail;
+    high?: Thumbnail;
+    standard?: Thumbnail;
+    maxres?: Thumbnail;
+  };
 };
+
+export type Thumbnail = { url: string; width: number; height: number };
 
 export type PlaylistItem = { id: string; snippet: Snippet };
 
