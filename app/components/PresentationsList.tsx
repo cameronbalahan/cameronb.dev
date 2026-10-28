@@ -38,6 +38,8 @@ export default function PresentationsList({ items }: { items: Item[] }) {
                   height={medium?.height}
                   src={medium?.url}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="flex flex-col gap-2">
                   <span className="text-sm text-neutral-500">

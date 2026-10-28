@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profile from "../public/images/home/profile.jpg";
+import profile from "../public/images/home/profile.webp";
 import { LocationIcon } from "./components/Icons";
 
 
