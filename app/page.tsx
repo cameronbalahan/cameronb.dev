@@ -1,7 +1,16 @@
 import Image from "next/image";
 import profile from "../public/images/home/profile.webp";
 import { Metadata } from "next";
+import { JsonLd } from "./components/JsonLd";
 import { LocationIcon } from "./components/Icons";
+import {
+  EMPLOYER,
+  JOB_TITLE,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_LINKS,
+} from "../utils/config";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -11,6 +20,24 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <section className="flex gap-6 flex-wrap">
+      <JsonLd
+        data={{
+          "@type": "Person",
+          name: SITE_NAME,
+          url: SITE_URL,
+          image: `${SITE_URL}${profile.src}`,
+          description: SITE_DESCRIPTION,
+          jobTitle: JOB_TITLE,
+          worksFor: EMPLOYER && { "@type": "Organization", name: EMPLOYER },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "New York",
+            addressRegion: "NY",
+            addressCountry: "US",
+          },
+          sameAs: Object.values(SOCIAL_LINKS),
+        }}
+      />
       <div>
         <Image
           alt="Cameron Balahan Profile"

@@ -2,19 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { getPublishedAt, PlaylistItem } from "../../utils/youtube";
 
 const PAGE_SIZE = 5;
 
-type Snippet = {
-  title: string;
-  publishedAt: string;
-  resourceId: { videoId: string };
-  thumbnails: { medium: { url: string; width: number; height: number } };
-};
 
-type Item = { id: string; snippet: Snippet };
-
-export default function PresentationsList({ items }: { items: Item[] }) {
+export default function PresentationsList({ items }: { items: PlaylistItem[] }) {
   const [page, setPage] = useState(1);
 
   const totalPages = Math.ceil(items.length / PAGE_SIZE);
@@ -24,7 +17,8 @@ export default function PresentationsList({ items }: { items: Item[] }) {
   return (
     <div className="flex flex-col gap-6">
       <ul className="flex flex-col gap-2">
-        {visible.map(({ id, snippet }) => {
+        {visible.map((item) => {
+          const { id, snippet } = item;
           const medium = snippet?.thumbnails?.medium;
           return (
             <li key={id}>
@@ -43,7 +37,7 @@ export default function PresentationsList({ items }: { items: Item[] }) {
                 />
                 <div className="flex flex-col gap-2">
                   <span className="text-sm text-neutral-500">
-                    {new Date(snippet?.publishedAt).toDateString()}
+                    {new Date(getPublishedAt(item)).toDateString()}
                   </span>
                   <h3 className="font-medium">{snippet?.title}</h3>
                 </div>

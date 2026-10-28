@@ -3,6 +3,17 @@ export const SITE_DESCRIPTION = "I'm a product leader and entrepreneur with a pa
 export const SITE_DOMAIN = "cameronb.dev";
 export const SITE_URL = `https://${SITE_DOMAIN}`;
 
+// Used in the home page's structured data; leave undefined to omit.
+export const JOB_TITLE: string | undefined = "Group Product Manager";
+export const EMPLOYER: string | undefined = "Google";
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/in/cameronbalahan/",
+  bluesky: "https://bsky.app/profile/cameronb.bsky.social",
+  x: "https://x.com/cameronbalahan",
+  youtube: "https://www.youtube.com/playlist?list=PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh",
+};
+
 export type RouteName = keyof typeof ROUTES;
 
 export const ROUTES = {
