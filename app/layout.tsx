@@ -69,9 +69,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
       className={cx([roboto.className, "text-white bg-[#111010]"])}
     >
       <body className="antialiased min-h-dvh flex items-center justify-center">
-        <div className="flex flex-col w-full max-w-2xl h-dvh max-h-[1000px] px-6 lg:px-0">
+        <div className="relative flex flex-col w-full max-w-2xl h-dvh max-h-[1000px] px-6 lg:px-0">
           <Nav />
-          <main className="flex-1 min-h-0 overflow-y-auto">{children}</main>
+          <main className="flex-1 min-h-0 overflow-y-auto pt-36">{children}</main>
           <Footer />
         </div>
       </body>
