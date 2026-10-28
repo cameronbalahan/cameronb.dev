@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPlaylistItems } from "../../../utils/youtube";
+import YouTubeEmbed from "../../components/YouTubeEmbed";
 
 export const dynamicParams = false;
 
@@ -55,15 +56,7 @@ export default async function PresentationPage({
           <span className="text-sm text-neutral-500">{date}</span>
         </div>
       </div>
-      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-        <iframe
-          className="absolute inset-0 w-full h-full rounded-md"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
+      <YouTubeEmbed title={title} videoId={videoId} />
     </article>
   );
 }
