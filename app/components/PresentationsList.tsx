@@ -58,7 +58,7 @@ export default function PresentationsList({ items }: { items: Item[] }) {
           <button
             onClick={() => setPage((p) => p - 1)}
             disabled={page === 1}
-            className="px-3 py-1 rounded-md text-sm disabled:opacity-30 hover:bg-neutral-900"
+            className="px-3 py-1 text-sm transition-colors duration-75 disabled:opacity-30 enabled:hover:bg-[#020fc7]"
           >
             {"< Prev"}
           </button>
@@ -67,8 +67,8 @@ export default function PresentationsList({ items }: { items: Item[] }) {
             <button
               key={n}
               onClick={() => setPage(n)}
-              className={`px-3 py-1 rounded-md text-sm ${
-                n === page ? "bg-neutral-700" : "hover:bg-neutral-900"
+              className={`px-3 py-1 text-sm transition-colors duration-75 ${
+                n === page ? "bg-neutral-700" : "hover:bg-[#020fc7]"
               }`}
             >
               {n}
@@ -78,7 +78,7 @@ export default function PresentationsList({ items }: { items: Item[] }) {
           <button
             onClick={() => setPage((p) => p + 1)}
             disabled={page === totalPages}
-            className="px-3 py-1 rounded-md text-sm disabled:opacity-30 hover:bg-neutral-900"
+            className="px-3 py-1 text-sm transition-colors duration-75 disabled:opacity-30 enabled:hover:bg-[#020fc7]"
           >
             {"Next >"}
           </button>
