@@ -6,10 +6,10 @@ import { LocationIcon } from "./components/Icons";
 import {
   EMPLOYER,
   JOB_TITLE,
+  PROFILE_LINKS,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
-  SOCIAL_LINKS,
 } from "../utils/config";
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function HomePage() {
             addressRegion: "NY",
             addressCountry: "US",
           },
-          sameAs: Object.values(SOCIAL_LINKS),
+          sameAs: PROFILE_LINKS,
         }}
       />
       <div>

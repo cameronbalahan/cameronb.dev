@@ -14,6 +14,15 @@ export const SOCIAL_LINKS = {
   youtube: "https://www.youtube.com/playlist?list=PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh",
 };
 
+// Profiles that identify the same person, for structured data. The footer
+// links to the talks playlist, but identity belongs to the channel itself.
+export const PROFILE_LINKS = [
+  SOCIAL_LINKS.linkedin,
+  SOCIAL_LINKS.bluesky,
+  SOCIAL_LINKS.x,
+  "https://www.youtube.com/@cameronbalahan",
+];
+
 export type RouteName = keyof typeof ROUTES;
 
 export const ROUTES = {
