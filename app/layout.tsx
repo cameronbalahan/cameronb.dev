@@ -1,7 +1,7 @@
 import "./global.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
-import { Roboto_Mono } from 'next/font/google'
+import { Roboto_Mono } from "next/font/google";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../utils/config";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        alt: SITE_NAME,
+        height: 630,
+        width: 1200,
+        url: "/opengraph-image.jpg",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -36,12 +44,22 @@ export const metadata: Metadata = {
   twitter: {
     title: SITE_NAME,
     card: "summary_large_image",
+    images: ["/opengraph-image.jpg"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: { url: "/apple-icon.png", sizes: "180x180" },
   },
 };
 
 const roboto = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({ children }: PropsWithChildren) {
