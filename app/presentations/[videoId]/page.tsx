@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { SITE_DESCRIPTION, SITE_NAME } from "../../../utils/config";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../../../utils/config";
 import { notFound } from "next/navigation";
-import { getPlaylistItems } from "../../../utils/youtube";
+import { getPlaylistItems, getPublishedAt } from "../../../utils/youtube";
+import { JsonLd } from "../../components/JsonLd";
 import YouTubeEmbed from "../../components/YouTubeEmbed";
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const items = await getPlaylistItems();
-  if (items.length === 0) return [{ videoId: "__placeholder__" }];
   return items.map((item) => ({ videoId: item.snippet.resourceId.videoId }));
 }
 
@@ -69,7 +69,8 @@ export default async function PresentationPage({
 
   if (!item) notFound();
 
-  const { title, publishedAt } = item.snippet;
+  const { title, description, thumbnails } = item.snippet;
+  const publishedAt = getPublishedAt(item);
 
   const date = new Date(publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
@@ -79,6 +80,18 @@ export default async function PresentationPage({
 
   return (
     <article className="flex flex-col gap-6">
+      <JsonLd
+        data={{
+          "@type": "VideoObject",
+          name: title,
+          description: description || title,
+          thumbnailUrl: Object.values(thumbnails).map((t) => t.url),
+          uploadDate: publishedAt,
+          embedUrl: `https://www.youtube.com/embed/${videoId}`,
+          contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+          url: `${SITE_URL}/presentations/${videoId}`,
+        }}
+      />
       <div className="flex flex-col gap-4">
         <Link
           href="/presentations"

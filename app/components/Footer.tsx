@@ -1,23 +1,12 @@
+import { SOCIAL_LINKS } from "../../utils/config";
 import { BlueSkyIcon, LinkedinIcon, TwitterIcon, YouTubeIcon } from "./Icons";
 
 const SOCIALS = [
-  {
-    href: "https://www.linkedin.com/in/cameronbalahan/",
-    icon: <LinkedinIcon />
-  },
-  {
-    href: "https://bsky.app/profile/cameronb.bsky.social",
-    icon: <BlueSkyIcon />,
-  },
-  {
-    href: "https://x.com/cameronbalahan",
-    icon: <TwitterIcon />,
-  },
-  {
-    href: "https://www.youtube.com/playlist?list=PLT95ZaEUsTjisQ3TutjC1MRlY6HZiNSyh",
-    icon: <YouTubeIcon  />
-  }
-]
+  { href: SOCIAL_LINKS.linkedin, icon: <LinkedinIcon /> },
+  { href: SOCIAL_LINKS.bluesky, icon: <BlueSkyIcon /> },
+  { href: SOCIAL_LINKS.x, icon: <TwitterIcon /> },
+  { href: SOCIAL_LINKS.youtube, icon: <YouTubeIcon /> },
+];
 
 
 export function Footer() {
